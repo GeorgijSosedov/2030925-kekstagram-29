@@ -35,13 +35,13 @@ export const getRandomInteger = (min, max) => {
 };
 
 export const getRandomIdFromRange = (min,max) => {
-  const previousValues = [];
+  const previousValues = []; 
   return function() {
     let currentValue = getRandomInteger(min,max);
     if(previousValues.length >= (max - min + 1)) {
       return null;
     }
-    while (previousValues.includes(currentValue)) {
+    while (previousValues.includes(currentValue)) { 
       currentValue = getRandomInteger(min,max);
     }
     previousValues.push(currentValue);
